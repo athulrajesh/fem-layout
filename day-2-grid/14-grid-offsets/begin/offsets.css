@@ -15,14 +15,23 @@ article {
 	background-color: green;
 	color: white;
 }
-aside {
+.sidebar {
 	background-color: yellow;
 }
-article aside {
+ aside {
 	background-color: white;
 	color: black;
 	padding: 0.5em;
 	border-radius: 0.5em;
+	grid-area: aside;
+	
+	
+}
+.aside1 {
+	grid-area: aside1;
+}
+.aside3 {
+	grid-area: aside3;
 }
 
 @media (min-width: 650px) { 
@@ -52,5 +61,15 @@ article aside {
 		grid-column: 1 / 2;
 		grid-row: 1 / 3;
 	}
+
+	.nested {
+		display: grid;
+		gap: 10px;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: auto;
+		grid-template-areas: 
+		"aside1 ... aside3";
+	}
+
 
 }

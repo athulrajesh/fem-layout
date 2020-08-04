@@ -25,6 +25,9 @@ article img {
   max-width: 250px;
 }
 nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   background: url(../img/scallop.png) repeat-x;
 }
 nav ul {
@@ -39,14 +42,12 @@ nav ul {
 /* splits nav into 2 columns
 http://stackoverflow.com/questions/13104818/simple-2-column-navigation-with-css-and-a-single-list */
 nav li:nth-child(even) {
-  width: 50%;
-  float: right;
+  flex: 0 0 50%;
   padding: 0.5em;
 }
 nav li:nth-child(odd) {
-  width: 50%;
-  float: left;
-    padding: 0.5em;
+  flex: 0 0 50%;
+  padding: 0.5em;
 }
 nav a {
   color: #c80060;
@@ -59,11 +60,14 @@ nav a:hover {
 }
 
 
-.row:before, 
-.row:after {
-    content:"";
-    display: table;
-    clear:both;
+.row {
+  display: flex;
+  flex-flow: row wrap;
+}
+    
+ul.row {
+  flex: 0 0 100%;
+  
 }
 div.row {
   background-color: #fff6e0;
@@ -95,7 +99,7 @@ div.row {
 }
 [class*='sidebar'] img {
   border-radius: 0px 0px 10px 10px;
-  width: 100%;
+  flex: 0 0 100%;
   max-width: 250px;
   display: block; /* without this, there is a gap between the image and border -- space for descenders in text, for inline elements */
 } 
@@ -169,8 +173,7 @@ div.row {
   padding: 0 2em;
 }
 aside[class*='sidebar'] {
-  float: left;
-  width: 47%;
+  flex: 0 0 47%;
   margin-right: 3%;
 }
 
@@ -191,27 +194,26 @@ aside[class*='sidebar'] {
   .wrapper {
       width: 97%;
       max-width: 1200px;
-      float: none;
+
   }
 
   [class*='col-'] {
-    float: left;
     margin-left: 3.33333%;
     min-height: 1px;
   }
   .col-1,
   .col-1-2,
   .col-1-4 {
-    width: 20.83333%;
+    flex: 0 0 20.83333%;
   }
   .col-2 {
-    width: 44.99999%;
+    flex: 0 0 44.99999%;
   }
   .col-3 {
-    width: 69.16665%;
+    flex: 0 0 69.16665%;
   }
   .col-4 {
-    width: 96.66666%;
+    flex: 0 0 96.66666%;
   }
   h2 {
     font-size: 3em;
@@ -226,9 +228,7 @@ aside[class*='sidebar'] {
   nav li,
   nav li:nth-child(even),
   nav li:nth-child(odd) {
-    display: inline-block;
-    float: none;
-    width: auto;
+    flex: 0 0 auto;
     padding: 0;
   }
   nav a {

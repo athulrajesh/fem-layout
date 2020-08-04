@@ -22,7 +22,7 @@ h1,h2,h3,h4,h5,h6 {
 article img {
   border-radius: 10px;
   width: 100%;
-  max-width: 250px;
+ 
 }
 nav {
   background: url(../img/scallop.png) repeat-x;
@@ -71,6 +71,8 @@ div.row {
 .floatright {
   float: right;
   margin: 0 0 1em 1em;
+  
+  
 }
 [class*='sidebar'] {
   border: 1px solid #00c4c7;

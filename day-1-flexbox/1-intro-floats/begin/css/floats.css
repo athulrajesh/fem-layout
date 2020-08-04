@@ -29,15 +29,91 @@ div img {
 	width: 100%;
 	max-width: 225px; 
 }
+.row::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+[class*= 'col-'] {
+	margin-left: 4%;
+	margin-right: 0px;
+	width: 92%;
+	min-height: 1px;
+}
 
+
+.col-xs {
+	float: left;
+	
+	background-color: brown;
+	
+}
+
+.col-s {
+	float: left;
+	
+	background-color: aqua;
+}
+.col-m {
+	float: left;
+	
+	background-color: beige;
+}
+
+.col-l {
+	float: left;
+	
+	background-color: blueviolet;
+}
+.col-xsm {
+	float: left;
+	background-color: cadetblue;
+	
+}
 /* grid system -- mobile first! */
 
 
 /* Mobile Landscape Screen Sizes */
-@media only screen and (min-width: 480px)  {
+@media only screen and (max-width: 767px)  {
+	.col-xs, .col-s{
+		width: 44%;
+		
+	}
+	.col-m, col-xsm,.col-l {
+		width: 92%;
+		
+	}
 
 }
 /* Desktop screen Sizes */
 @media only screen and (min-width: 768px) {
+	.col-xs {
+		float: left;
+		width: 20%;
+		background-color: brown;
+		
+	}
+	
+	.col-s {
+		float: left;
+		width: 44%;
+		background-color: aqua;
+	}
+	.col-m {
+		float: left;
+		width: 68%;
+		background-color: beige;
+	}
+	
+	.col-l {
+		float: left;
+		width: 92%;
+		background-color: blueviolet;
+	}
+	.col-xsm {
+		float: left;
+		background-color: cadetblue;
+		width: 20%;
+		}
 
 }
